@@ -1,0 +1,17 @@
+<VirtualHost *:443>
+    ServerName aj-pollockfullstackbankingapplication.com
+    SSLEngine on
+    SSLCertificateFile "/opt/bitnami/apache/conf/aj-pollockfullstackbankingapplication.com.crt"
+    SSLCertificateKeyFile "/opt/bitnami/apache/conf/aj-pollockfullstackbankingapplication.com.key"
+    # Other directives here
+</VirtualHost> 
+
+<VirtualHost *:443>
+    ServerName aj-pollockfullstackbankingapplication.com
+    ProxyPass / http://localhost:3000/
+    ProxyPassReverse / http://localhost:3000/
+    SSLEngine on
+    SSLCertificateFile "/opt/bitnami/apache/conf/aj-pollockfullstackbankingapplication.com.crt"
+    SSLCertificateKeyFile "/opt/bitnami/apache/conf/aj-pollockfullstackbankingapplication.com.key"
+    # Other directives here
+</VirtualHost> 
